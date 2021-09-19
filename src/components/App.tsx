@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from '../logo.svg';
-import './App.css';
+import AppHeader from './common/AppHeader';
+  import StatusList from './contents/StatusList';
+import IncidentHistory from './contents/IncidentHistory';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Alert from '@mui/material/Alert';
+import Typography from '@mui/material/Typography';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppHeader />
+
+      <Alert icon={false} severity="success">
+        <Typography variant="h2" component="div" sx={{ flexGrow: 1, mt: 4, mb: 4 }}>
+          ✅ All Systems Operational
+        </Typography>
+      </Alert>
+
+      <StatusList />
+      <IncidentHistory />
+
     </div>
   );
 }
